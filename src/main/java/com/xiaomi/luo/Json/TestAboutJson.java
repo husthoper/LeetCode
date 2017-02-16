@@ -26,17 +26,8 @@ public class TestAboutJson {
 		System.out.println(" ------------ ");
 		long start = System.currentTimeMillis();
 		for (int i = 0; i < testNum; i++)
-		    Json2Jsonlib(json);
-		long end = System.currentTimeMillis();
-		System.out.println("通过json-lib解析" + testNum + "次耗时: "
-			+ ((end - start) / 1000.0) + " seconds");
-		System.out.println("");
-		
-		System.out.println(" ------------ ");
-		start = System.currentTimeMillis();
-		for (int i = 0; i < testNum; i++)
 		    Json2Gson(json);
-		end = System.currentTimeMillis();
+		long end = System.currentTimeMillis();
 		System.out.println("通过gson解析" + testNum + "次耗时: "
 			+ ((end - start) / 1000.0) + " seconds");
 		System.out.println("");
@@ -49,6 +40,16 @@ public class TestAboutJson {
 		System.out.println("通过fastJson解析" + testNum + "次耗时: "
 			+ ((end - start) / 1000.0) + " seconds");
 		System.out.println("");
+		
+		System.out.println(" ------------ ");
+		 start = System.currentTimeMillis();
+		for (int i = 0; i < testNum; i++)
+		    Json2Jsonlib(json);
+		end = System.currentTimeMillis();
+		System.out.println("通过json-lib解析" + testNum + "次耗时: "
+			+ ((end - start) / 1000.0) + " seconds");
+		System.out.println("");
+		
 }
 	private static void Json2Jsonlib(String json) {
     	JSONObject jo = JSONObject.fromObject(json);
